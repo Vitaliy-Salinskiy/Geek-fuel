@@ -94,3 +94,11 @@
 		top: 0px;
 	}
 }
+
+.HereIsWhat__list-item {
+	@apply w-full flex items-start justify-between gap-4;
+}
+
+.HereIsWhat__list-item__text {
+	@apply text-[14px] font-normal text-main-black font-graphik-regular sm:text-[18px];
+}
