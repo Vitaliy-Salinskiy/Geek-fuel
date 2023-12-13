@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import tick from './assets/tick.svg'
+import tick from '../public/assets/images/hereIsWhat/tick.svg'
 
 const HereIsWhat:React.FC = ():JSX.Element => {
   return (
