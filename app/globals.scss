@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "DINPro Bold";
+	src: url("/assets/fonts/DINPro/DINProBold.woff2") format(woff2);
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Graphik Mudium";
+	src: url("/assets/fonts/Graphik/GraphikMedium.woff2") format(woff2);
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Graphik Regular";
+	src: url("/assets/fonts/Graphik/GraphikRegular.woff2") format(woff2);
+	font-weight: 400;
+	font-style: normal;
+}
+
+.heading-primary {
+	@apply font-din text-[36px] leading-[91%] uppercase lg:text-[60px];
+}
+
+.sub-heading {
+	@apply font-din text-[18px] leading-[91%] uppercase lg:text-[20px];
+}
+
+.text-primary {
+	@apply font-graphik-regular text-[14px] leading-[21px] lg:text-[18px] lg:leading-[26px];
+}
+
+.text-description {
+	@apply font-din text-[22px] leading-[91%] uppercase lg:text-[26px];
+}
+
+.btn {
+	@apply font-din py-[16px] px-[31px] text-[18px] leading-[91%] uppercase lg:py-[20px] lg:px-[38px] lg:text-[22px];
+}
+
+.flexCenter {
+	@apply flex justify-center items-center
+}
+
+.flexBetween {
+	@apply flex justify-between items-center
+}
+
+.burger {
+	width: 17px;
+	height: 2px;
+	background-color: #222222;
+	position: relative;
+	transition: all 0.3s ease;
+	border-radius: 2px;
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		border-radius: inherit;
+		background-color: #222222;
+		transition: all 0.3s ease;
+	}
+
+	&::after {
+		top: -5px;
+	}
+
+	&::before {
+		bottom: -5px;
+	}
+}
+
+.burger.activated {
+	background-color: transparent;
+	transform: rotate(90deg);
+
+
+	&::before {
+		transform: rotate(45deg);
+		bottom: 0;
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+		top: 0px;
+	}
+}
