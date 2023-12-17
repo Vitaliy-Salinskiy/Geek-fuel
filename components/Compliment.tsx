@@ -30,7 +30,7 @@ const Compliment:React.FC = ():JSX.Element => {
                         </div>
                     ))}
                 </div>
-                <div className="w-[70px] h-[10px] flex justify-between items-center ">
+                <div className="w-[70px] h-[10px] flex justify-between items-center">
                     {complimentQuotes.map((quotePag) => (
                         <div className="h-[10px] w-[10px] rounded-full border border-main-black cursor-pointer"
                             onClick={() => { setCurrentPag(quotePag.id) }}

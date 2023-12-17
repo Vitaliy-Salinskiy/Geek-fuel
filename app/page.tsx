@@ -4,6 +4,7 @@ import WhatInABox from '@/components/WhatInABox'
 import GetGeek from '@/components/GetGeek'
 import EveryDaySecond from '@/components/EveryDaySecond'
 import Compliment from '@/components/Compliment'
+import Footer from '@/components/Footer'
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<GetGeek />
 			<EveryDaySecond />
 			<Compliment />
+			<Footer />
 		</>
 	)
 }
