@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { complimentQuotes } from '@/constants';
 
-export default function Compliment() {
+const Compliment:React.FC = ():JSX.Element => {
     const [currentPag, setCurrentPag] = useState(2);
     const [sliderTranslate, setSliderTranslate] = useState('0%');
 
@@ -42,3 +42,5 @@ export default function Compliment() {
         </div>
     );
 }
+
+export default Compliment;
