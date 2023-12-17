@@ -12,3 +12,9 @@ export interface IBoxGalleryCols {
 	firstImage: string;
 	secondImage: string;
 }
+
+export interface IGeekCardInfo {
+	img: string;
+	card_text: string;
+	bottom_text: string;
+}
