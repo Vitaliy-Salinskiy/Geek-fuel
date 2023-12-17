@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import CreatePostForm from '@/components/CreatePostForm';
 import CreateProductForm from '@/components/CreateProductForm';
+import Comments from '@/components/Comments';
 
 const adminPage:React.FC = ():JSX.Element => {
     const [formType, setFormType] = useState('products');
@@ -22,14 +23,18 @@ const adminPage:React.FC = ():JSX.Element => {
                   <p className='text-main-black text-[20px] font-bold md:hidden'>|</p>
                   <button className='bg-main-red rounded-md md:w-full p-[4px] text-white font-graphik-regular md:rounded-none'
                     onClick={() => {setFormType('products')}}
-                  >Goods</button>
+                  >Products</button>
                   <button className='bg-main-red rounded-md md:w-full p-[4px] text-white font-graphik-regular md:rounded-none'
                     onClick={() => {setFormType('posts')}}
-                  >Products</button>
+                  >Posts</button>
+                  <button className='bg-main-red rounded-md md:w-full p-[4px] text-white font-graphik-regular md:rounded-none'
+                    onClick={() => {setFormType('comments')}}
+                  >Comments</button>
               </div>
               <div className="h-full w-full flex justify-center items-center bg-border-gray">
                   {formType == 'posts' ? <CreatePostForm /> : null }
                   {formType == 'products' ? <CreateProductForm /> : null }
+                  {formType == 'comments' ? <Comments /> : null }
               </div>
           </div>
       </div>
