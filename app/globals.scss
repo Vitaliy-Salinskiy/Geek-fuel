@@ -94,3 +94,10 @@
 		top: 0px;
 	}
 }
+
+.HereIsWhat__list-item {
+	@apply flex gap-[16px];
+}
+.HereIsWhat__list-item__text {
+	@apply text-main-black text-[14px] font-graphik-medium lg:text-[18px];
+}
