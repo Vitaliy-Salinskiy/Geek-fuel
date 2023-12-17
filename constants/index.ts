@@ -1,4 +1,4 @@
-import { IHeaderLinks, IBoxList, IBoxGalleryCols, IGeekCardInfo } from "@/interfaces";
+import { IHeaderLinks, IBoxList, IBoxGalleryCols, IGeekCardInfo, IComplimentQuotes } from "@/interfaces";
 import li1_img from '../public/assets/images/WhatInABox/list/li1-img.svg';
 import li2_img from '../public/assets/images/WhatInABox/list/li2-img.svg';
 import li3_img from '../public/assets/images/WhatInABox/list/li3-img.svg';
@@ -79,5 +79,23 @@ export const geekCardInfo: IGeekCardInfo[] = [
 		img: card_image3,
 		card_text: 'vel semper neque sagittis quis',
 		bottom_text: 'Mauris vestibulum nulla vitae massa lacinia pretium. Aliquam sodales venenatis nunc, et lacinia nunc.'
+	}
+];
+
+export const complimentQuotes: IComplimentQuotes[] = [
+	{
+		id: 1,
+		text: '“Nam accumsan est vel neque varius, a gravida diam dignissim. Maecenas eu dui porta, pellentesque nisi id, bibendum erat. Proin condimentum lacinia tellus.”',
+		user: 'OLIVIA J'
+	},
+	{
+		id: 2,
+		text: '“Nam accumsan est vel neque varius, a gravida diam dignissim. Maecenas eu dui porta, pellentesque nisi id, bibendum erat. Proin condimentum lacinia tellus.”',
+		user: 'OLIVIA J'
+	},
+	{
+		id: 3,
+		text: '“Nam accumsan est vel neque varius, a gravida diam dignissim. Maecenas eu dui porta, pellentesque nisi id, bibendum erat. Proin condimentum lacinia tellus.”',
+		user: 'OLIVIA J'
 	}
 ];

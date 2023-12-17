@@ -18,3 +18,9 @@ export interface IGeekCardInfo {
 	card_text: string;
 	bottom_text: string;
 }
+
+export interface IComplimentQuotes {
+	id: number;
+	text: string;
+	user: string;
+}
