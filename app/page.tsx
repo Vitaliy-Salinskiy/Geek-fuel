@@ -17,11 +17,11 @@ export default function Home() {
 			<HereIsWhat />
 			<WhatInABox />
 			<GetGeek />
+			<Plans />
+			<Reveal />
 			<EveryDaySecond />
 			<Compliment />
 			<Footer />
-			<Plans />
-			<Reveal />
 		</>
 	)
 }
