@@ -36,7 +36,7 @@ export const HeaderItems = ({ link, setActivated, activatedLink }: HeaderItemsPr
 			<p className="group font-graphik-medium font-semibold text-[14px]  text-main-black uppercase flexCenter gap-3 transition-all duration-300">
 				{activatedLink === link.lable && (
 					<Image
-						className={`  ${activatedLink === link.lable ? "header__link-close header__link-close--active" : "header__link-close"}`}
+						className={`rotate-180`}
 						alt="arrow menu"
 						width={11}
 						height={11}
@@ -123,7 +123,7 @@ const Header = () => {
 						{headerLinks.map((link, index) => (
 							<Link
 								href="/"
-								className="group font-graphik-medium font-semibold text-[14px]  text-main-black uppercase flex items-center justify-center gap-3 transition-all duration-300"
+								className="group font-graphik-medium font-semibold text-[14px] text-main-black uppercase flex items-center justify-center gap-3 transition-all duration-300"
 								key={`${link}-desk-${index}`}
 							>
 								{link.lable}
@@ -142,21 +142,15 @@ const Header = () => {
 
 					{/* desktop nav */}
 
-					<div >
+					<div className='relative w-[150px] h-[35px] 2xl:w-[260px] 2xl:h-[60px]'>
 						<Image
-							className="cursor-pointer 2xl:hidden"
+							className="cursor-pointer absolute"
 							src="/assets/images/header/logo.svg"
-							width={150}
-							height={35}
 							alt='search'
+							priority
+							fill
 						/>
-						<Image
-							className="cursor-pointer hidden 2xl:block"
-							src="/assets/images/header/logo.svg"
-							width={260}
-							height={60}
-							alt='search'
-						/>
+
 					</div>
 
 					<div className='flex gap-5 xl:hidden'>

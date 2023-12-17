@@ -51,6 +51,23 @@
 	@apply flex justify-between items-center
 }
 
+.appContainer {
+	@apply max-w-[1568px] mx-auto px-5 xl:px-3 2xl:px-0
+}
+
+@layer utilities {
+	.two {
+		width: calc(100% / 2 - 30px);
+	}
+	.three {
+		width: calc(100% / 3 - 30px);
+	}
+}
+
+.plan-item{
+	@apply bg-white w-full md:two xl:three px-5 pt-5 xl:px-10 pb-11 xl:pb-[70px] flex flex-col relative
+}
+
 .burger {
 	width: 17px;
 	height: 2px;

@@ -24,3 +24,16 @@ export interface IComplimentQuotes {
 	text: string;
 	user: string;
 }
+
+interface IncludedInPlan {
+	status: boolean;
+	title: string;
+}
+
+export interface IPlanItem {
+	title: string;
+	price: number;
+	img: string;
+	description: string;
+	includedIn: IncludedInPlan[];
+}

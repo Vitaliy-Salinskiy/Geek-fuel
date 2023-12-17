@@ -1,4 +1,4 @@
-import { IHeaderLinks, IBoxList, IBoxGalleryCols, IGeekCardInfo, IComplimentQuotes } from "@/interfaces";
+import { IHeaderLinks, IBoxList, IBoxGalleryCols, IGeekCardInfo, IComplimentQuotes, IPlanItem } from "@/interfaces";
 import li1_img from '../public/assets/images/WhatInABox/list/li1-img.svg';
 import li2_img from '../public/assets/images/WhatInABox/list/li2-img.svg';
 import li3_img from '../public/assets/images/WhatInABox/list/li3-img.svg';
@@ -12,6 +12,9 @@ import col2_1 from '../public/assets/images/WhatInABox/gallery/col2_1.svg';
 import col2_2 from '../public/assets/images/WhatInABox/gallery/col2_2.svg';
 import col3_1 from '../public/assets/images/WhatInABox/gallery/col3_1.svg';
 import col3_2 from '../public/assets/images/WhatInABox/gallery/col3_2.svg';
+import plan1 from "../public/assets/images/plans/plan-1.svg"
+import plan2 from "../public/assets/images/plans/plan-2.svg"
+import plan3 from "../public/assets/images/plans/plan-3.svg"
 
 export const headerLinks: IHeaderLinks[] = [
 	{
@@ -99,3 +102,66 @@ export const complimentQuotes: IComplimentQuotes[] = [
 		user: 'OLIVIA J'
 	}
 ];
+
+export const planItems: IPlanItem[] = [
+	{
+		title: "Month-to-Month",
+		price: 26,
+		img: plan1,
+		description: "Billed monthly",
+		includedIn: [
+			{
+				status: true,
+				title: "Delivered monthly"
+			},
+			{
+				status: false,
+				title: "Save $18 compared to monthly"
+			},
+			{
+				status: false,
+				title: "Free bonus box ($125 value)"
+			},
+		]
+	},
+	{
+		title: "Month-to-Month",
+		price: 26,
+		img: plan2,
+		description: "Prepay $72 for 3 boxes",
+		includedIn: [
+			{
+				status: true,
+				title: "Delivered monthly"
+			},
+			{
+				status: true,
+				title: "Save $18 compared to monthly"
+			},
+			{
+				status: false,
+				title: "Free bonus box ($125 value)"
+			},
+		]
+	},
+	{
+		title: "Month-to-Month",
+		price: 26,
+		img: plan3,
+		description: "Prepay $138 for 6 boxes",
+		includedIn: [
+			{
+				status: true,
+				title: "Delivered monthly"
+			},
+			{
+				status: true,
+				title: "Save $18 compared to monthly"
+			},
+			{
+				status: true,
+				title: "Free bonus box ($125 value)"
+			},
+		]
+	}
+]
