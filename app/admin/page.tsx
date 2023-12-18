@@ -9,7 +9,7 @@ const adminPage:React.FC = ():JSX.Element => {
     const [formType, setFormType] = useState('products');
 
     return (
-      <div className='h-screen w-full flex items-center justify-center'>
+      <div className='h-screen w-full flex items-center justify-center min-h-[762px] md:min-h-[632px]'>
           <div className="border-main-red border-8 max-w-[1540px] max-h-[792px] w-full h-full flex flex-col justify-between items-center md:flex-row">
               <div className="border-main-red border-b-8 h-[80px] w-full flex items-center justify-around md:flex-col md:w-[300px] md:h-full md:justify-start md:gap-[20px] md:py-[40px] md:border-r-8 md:border-b-0">
                   <div className="flex items-center justify-center gap-[10px]">

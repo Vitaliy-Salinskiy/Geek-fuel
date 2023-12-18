@@ -11,7 +11,6 @@ const Comments:React.FC = ():JSX.Element => {
         axios.get('http://localhost:5000/comments')
         .then((response) => {
             setComments(response.data);
-            console.log(response.data[0])
         })
     }
     useEffect(() => {
@@ -48,8 +47,8 @@ const Comments:React.FC = ():JSX.Element => {
     
 
     return (
-      <div className="h-[calc(100%-50px)] w-[calc(100%-50px)] flex flex-col justify-start items-center gap-[8px] p-2 bg-main-red md:h-[calc(100%-100px)] md:w-[calc(100%-300px)]">
-          {comments.length === 0 ? (
+      <div className="h-[calc(100%-100px)] w-[370px] overflow-y-scroll flex flex-col justify-start items-center gap-[8px] p-2 bg-main-red md:h-[calc(100%-100px)] md:w-[calc(100%-150px)]">
+        {comments.length === 0 ? (
             <p className='text-[20px] mt-[20px] text-bg-white font-graphik-medium'>No comments here</p>
           ) : (
             comments.map((comment: any, key) => (
