@@ -8,6 +8,7 @@ import Compliment from '@/components/Compliment'
 import Footer from '@/components/Footer'
 import Plans from '@/components/Plans'
 import Reveal from '@/components/Reveal'
+import EveryDayFirst from '@/components/EveryDayFirst'
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 			<HereIsWhat />
 			<WhatInABox />
 			<GetGeek />
+			<EveryDayFirst />
 			<Plans />
 			<Reveal />
 			<EveryDaySecond />

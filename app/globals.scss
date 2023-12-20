@@ -140,3 +140,27 @@
 ::-webkit-scrollbar-thumb {
 	background-color: #FF5050;
 }
+
+.everyDayFirst-bg {
+	background-image: url('../public/assets/images/EveryDayFirst/EveryDayFirst-bg.svg');
+	background-position: center center;
+	background-size: cover;
+}
+.everyDayFirst-bg-lg {
+	background-image: url('../public/assets/images/EveryDayFirst/EveryDayFirst-bg-lg.svg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.everyDayFirst-listItem {
+	@apply w-full flex flex-col items-start gap-[12px] lg:w-[250px] mx-[30px];
+}
+
+.everyDayFirst-listItem-p {
+	@apply text-[14px] opacity-60 text-main-black font-graphik-regular xl:text-[15px];
+}
+
+.images {
+	@apply object-cover object-center;
+}
