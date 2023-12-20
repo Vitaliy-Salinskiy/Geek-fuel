@@ -164,3 +164,13 @@
 .images {
 	@apply object-cover object-center;
 }
+
+.chooseColor-el {
+	@apply w-[16px] h-[16px] cursor-pointer transition-all duration-300 hover:w-[18px] hover:h-[18px] hover:border-2 rounded-full;
+}
+
+.tshirtContainer-hover:hover {
+	button {
+		bottom: 10px;
+	}
+}
