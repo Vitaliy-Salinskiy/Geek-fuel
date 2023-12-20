@@ -9,6 +9,7 @@ import Footer from '@/components/Footer'
 import Plans from '@/components/Plans'
 import Reveal from '@/components/Reveal'
 import EveryDayFirst from '@/components/EveryDayFirst'
+import FeaturedFandoms from '@/components/FeaturedFandoms'
 
 export default function Home() {
 	return (
@@ -23,6 +24,7 @@ export default function Home() {
 			<Reveal />
 			<EveryDaySecond />
 			<Compliment />
+			<FeaturedFandoms />
 			<Footer />
 		</>
 	)
