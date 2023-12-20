@@ -1,16 +1,4 @@
-import { Header } from '@/components'
-import { Hero } from '@/components'
-import HereIsWhat from '@/components/HereIsWhat'
-import WhatInABox from '@/components/WhatInABox'
-import GetGeek from '@/components/GetGeek'
-import EveryDaySecond from '@/components/EveryDaySecond'
-import Compliment from '@/components/Compliment'
-import Footer from '@/components/Footer'
-import Plans from '@/components/Plans'
-import Reveal from '@/components/Reveal'
-import EveryDayFirst from '@/components/EveryDayFirst'
-import FeaturedFandoms from '@/components/FeaturedFandoms'
-import RecentDesign from '@/components/RecentDesign'
+import { Header, Hero, HereIsWhat, WhatInABox, GetGeek, EveryDayFirst, Plans, Reveal, EveryDaySecond, RecentDesign, Compliment, FeaturedFandoms, Footer } from '@/components'
 
 export default function Home() {
 	return (
@@ -24,10 +12,10 @@ export default function Home() {
 			<Plans />
 			<Reveal />
 			<EveryDaySecond />
+			<RecentDesign />
 			<Compliment />
 			<FeaturedFandoms />
 			<Footer />
-			<RecentDesign />
 		</>
 	)
 }
