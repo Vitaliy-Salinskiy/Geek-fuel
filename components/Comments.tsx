@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios';
   
 const Comments:React.FC = ():JSX.Element => {
@@ -23,7 +23,8 @@ const Comments:React.FC = ():JSX.Element => {
                 'Authorization': `Bearer ${token}`
             }
         })
-        .then(() => {
+        .then((response) => {
+            console.log(response.data);
             fetchData();
         })
     };

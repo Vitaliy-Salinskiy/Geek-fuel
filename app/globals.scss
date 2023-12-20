@@ -52,7 +52,7 @@
 }
 
 .appContainer {
-	@apply max-w-[1568px] mx-auto px-5 xl:px-3 2xl:px-0
+	@apply max-w-[1220px] mx-auto px-5 xl:px-3 2xl:px-0
 }
 
 @layer utilities {
@@ -173,4 +173,9 @@
 	button {
 		bottom: 10px;
 	}
+}
+
+::selection {
+	background: #FF5050;
+	color: #FFFFFF;
 }

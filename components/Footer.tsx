@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../public/assets/images/Footer/geekfuel-logo.svg';
 import arrow_right from '../public/assets/images/Footer/arrow-right.svg';
 import facebook_img from '../public/assets/images/Footer/facebook.svg';
@@ -11,7 +10,7 @@ import Image from 'next/image';
 const Footer:React.FC = ():JSX.Element => {
   return (
     <footer className='min-h-[689px] w-full flex justify-center items-center bg-[#262425] sm:min-h-[589px] xl:h-[422px] xl:min-h-0'>
-        <div className="max-w-[1220px] w-full min-h-full px-[20px] pt-[70px] flex flex-col justify-between items-center sm:gap-[20px]">
+        <div className="max-w-[1220px] w-full min-h-full px-[20px] pt-[70px] flex flex-col justify-between items-center sm:gap-[20px] xl:px-0">
             <div className="min-h-[519px] w-full flex flex-wrap justify-around items-center text-white sm:min-h-[419px] lg:items-start lg:min-h-[349px] lg:justify-between xl:min-h-[162px]">
                 <div className="w-full h-[60px] lg:w-auto">
                     <Image className='h-[40px] ml-[-15px] lg:h-[60px]' src={logo} alt="" />

@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image';
 import img_1 from '../public/assets/images/EveryDayFirst/img1.svg'
 import img_2 from '../public/assets/images/EveryDayFirst/img2.svg'
@@ -17,7 +16,7 @@ import tshirt_img from '../public/assets/images/EveryDayFirst/icons/tshirt.svg'
 const EveryDayFirst:React.FC = ():JSX.Element => {
   return (
     <div className='w-full h-[1192px] flex items-center justify-center bg-white py-[70px] sm:h-auto'>
-        <div className="h-full w-[360px] max-w-[1220px] px-[20px] flex flex-col justify-between items-center sm:w-[600px] lg:w-full">
+        <div className="h-full w-[360px] max-w-[1220px] px-[20px] flex flex-col justify-between items-center sm:w-[600px] lg:w-full xl:px-0">
             
             {/* md and low */}
             <div className="w-full flex flex-col items-start gap-[20px] lg:hidden">

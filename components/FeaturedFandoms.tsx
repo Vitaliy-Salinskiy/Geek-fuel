@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image';
 import logo_1 from '../public/assets/images/FeaturedFandoms/logo1.svg'
 import logo_2 from '../public/assets/images/FeaturedFandoms/logo2.svg'

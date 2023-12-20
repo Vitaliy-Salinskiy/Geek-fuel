@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import tshirt_1 from '../public/assets/images/RecentDesign/tshirt1.png'
 import tshirt_2 from '../public/assets/images/RecentDesign/tshirt2.png'
@@ -12,8 +11,8 @@ const RecentDesign:React.FC = ():JSX.Element => {
           <div className="max-w-[1220px] flex flex-col justify-between items-center gap-[40px]">
               <h2 className='font-din text-[24px] xl:text-[48px]'>RECENT T-SHIRTS DESIGNS</h2>
               <div className="flex flex-wrap items-center justify-around gap-[40px] xl:justify-between">
-                  {tshirts.map(tshirt => (
-                        <div className="h-[409px] w-[335px] flex flex-col justify-between items-center tshirtContainer-hover gap-[16px] xl:h-auto">
+                  {tshirts.map((tshirt, key) => (
+                        <div key={key} className="h-[409px] w-[335px] flex flex-col justify-between items-center tshirtContainer-hover gap-[16px] xl:h-auto">
                             <div className='transition-all duration-300 relative hover:bg-main-black hover:bg-opacity-5 overflow-hidden'>
                                 <Image src={tshirt} alt='tshirt img here' />
                                 <button className='transition-all duration-300 w-[315px] mx-[10px] h-[60px] bg-white font-din text-[22px] absolute bottom-[-50px]'>ADD TO CART</button>

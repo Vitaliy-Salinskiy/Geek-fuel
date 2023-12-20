@@ -11,5 +11,3 @@ export { default as RecentDesign } from "./RecentDesign"
 export { default as Compliment } from "./Compliment"
 export { default as FeaturedFandoms } from "./FeaturedFandoms"
 export { default as Footer } from "./Footer"
-
-
