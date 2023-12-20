@@ -23,16 +23,16 @@ const Compliment:React.FC = ():JSX.Element => {
             <div className="max-w-[1220px] h-full py-[100px] flex flex-col justify-between items-center">
                 <h2 className='text-main-red text-[20px] font-din'>WE LOVE A GOOD COMPLIMENT</h2>
                 <div style={{ transform: `translateX(${sliderTranslate})` }} className="w-[962px] md:w-[1595px] h-[180px] flex transition-all duration-1000 justify-between">
-                    {complimentQuotes.map((quote) => (
-                        <div className="w-[400px] md:w-[535px] flex flex-col justify-between items-center transition-all duration-1000" style={currentPag !== quote.id ? opacity : {}}>
+                    {complimentQuotes.map((quote, key) => (
+                        <div key={key} className="w-[400px] md:w-[535px] flex flex-col justify-between items-center transition-all duration-1000" style={currentPag !== quote.id ? opacity : {}}>
                             <h3 className='text-[18px] font-graphik-medium text-main-black md:text-[24px] text-center font-bold'>{quote.text}</h3>
                             <p className='text-[16px] font-din text-text-gray md:text-[18px] text-center'>{quote.user}</p>
                         </div>
                     ))}
                 </div>
                 <div className="w-[70px] h-[10px] flex justify-between items-center">
-                    {complimentQuotes.map((quotePag) => (
-                        <div className="h-[10px] w-[10px] rounded-full border border-main-black cursor-pointer"
+                    {complimentQuotes.map((quotePag, key) => (
+                        <div key={key} className="h-[10px] w-[10px] rounded-full border border-main-black cursor-pointer"
                             onClick={() => { setCurrentPag(quotePag.id) }}
                             style={currentPag === quotePag.id ? { background: '#0D0D0D' } : {}}
                         ></div>
