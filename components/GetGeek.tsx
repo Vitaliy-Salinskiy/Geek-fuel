@@ -1,11 +1,10 @@
-import React from 'react'
 import { geekCardInfo } from '@/constants'
 import Image from 'next/image'
 
 const GetGeek:React.FC = ():JSX.Element => {
   return (
     <div className='max-h-[1685px] mt-[80px] bg-[#F8F8F8] flex items-center justify-center'>
-        <div className="max-w-[1220px] w-full px-[20px] py-[70px] flex flex-col items-center">
+        <div className="max-w-[1220px] w-full px-[20px] py-[70px] flex flex-col items-center xl:px-0">
             <h2 className='text-[30px] font-din text-main-black xl:text-[44px]'>GET YOUR GEEK ON!</h2>
             <div className="flex flex-wrap items-center mt-[40px] gap-[40px] justify-center xl:justify-between">
             {geekCardInfo.map((card, index) => (

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const EveryDaySecond:React.FC = ():JSX.Element => {
   const [currentPag, setCurrentPag] = useState(1);
@@ -8,7 +8,7 @@ const EveryDaySecond:React.FC = ():JSX.Element => {
 
   return (
     <div className='h-[650px] w-full flex items-center justify-center everyDaySecond-image lg:h-[940px] mt-[100px]'>
-      <div className="max-w-[1220px] h-full px-[20px] py-[70px] sm:w-full flex justify-center items-center">
+      <div className="max-w-[1220px] h-full px-[20px] py-[70px] sm:w-full flex justify-center items-center xl:px-0">
         <div className="h-full w-full flex flex-col justify-end items-center sm:w-[620px] lg:w-full lg:justify-between">
           <div className="empty-box"></div>
           <div className="w-[335px] h-[236px] flex flex-col justify-between items-start text-white sm:self-start lg:w-[387px] lg:h-[321px]">

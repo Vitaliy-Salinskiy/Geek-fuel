@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic';
+const Select = dynamic(() => import('react-select'), { ssr: false });
+import { useEffect, useState } from 'react'
 import axios from 'axios';
-import Select from 'react-select';
 
 interface IColorOption {
     value: string;
@@ -11,7 +12,7 @@ interface IColorOption {
   
 const CreateProductForm:React.FC = ():JSX.Element => {
     const [title, setTitle] = useState("");
-    const [price, setPrice] = useState<number>(0);
+    const [price, setPrice] = useState<number | string>(0);
     const [image, setImage] = useState("");
     const [colors, setColors] = useState<string[]>([]);
     const [products, setProducts] = useState([]);
@@ -59,6 +60,11 @@ const CreateProductForm:React.FC = ():JSX.Element => {
         })
         .then((response) => {
             console.log(response);
+            setTitle('');
+            setPrice('');
+            setImage('');
+            setColors([]);
+            fetchData();
         })
         .catch((error) => {
             console.error(error);
@@ -104,10 +110,10 @@ const CreateProductForm:React.FC = ():JSX.Element => {
                 e.preventDefault();
                 createProduct();
               }}>
-                  <input className='w-full h-[40px] p-2 outline-none bg-bg-white' type="text" placeholder='product name' onChange={(e) => {
+                  <input className='w-full h-[40px] p-2 outline-none bg-bg-white' type="text" placeholder='product name' value={title} onChange={(e) => {
                         setTitle(e.target.value);
                   }} />
-                  <input className='w-full h-[40px] p-2 outline-none bg-bg-white' type="text" placeholder='product price' onChange={(e: any) => {
+                  <input className='w-full h-[40px] p-2 outline-none bg-bg-white' type="text" placeholder='product price' value={price} onChange={(e: any) => {
                         setPrice(e.target.value);
                   }} />
                   <Select

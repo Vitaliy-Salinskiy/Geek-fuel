@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios';
 
 const CreatePostForm:React.FC = ():JSX.Element => {
@@ -36,6 +36,10 @@ const CreatePostForm:React.FC = ():JSX.Element => {
         })
         .then((response) => {
             console.log(response);
+            fetchData();
+            setTitle('');
+            setContent('');
+            setFile('');
         })
         .catch((error) => {
             console.error(error);
@@ -81,10 +85,10 @@ const CreatePostForm:React.FC = ():JSX.Element => {
                 e.preventDefault();
                 createPost();
               }}>
-                  <input className='w-full h-[40px] p-2 outline-none bg-bg-white' type="text" placeholder='post name' onChange={(e) => {
+                  <input className='w-full h-[40px] p-2 outline-none bg-bg-white' type="text" placeholder='post name' value={title} onChange={(e) => {
                         setTitle(e.target.value);
                 }} />
-                  <textarea className='w-full h-[40px] p-2 outline-none bg-bg-white resize-none' placeholder='post text' onChange={(e) => {setContent(e.target.value)}}></textarea>
+                  <textarea className='w-full h-[40px] p-2 outline-none bg-bg-white resize-none' placeholder='post text' value={content} onChange={(e) => {setContent(e.target.value)}}></textarea>
                   <input type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xl border-none rounded-none h-[30px]" onChange={(e: any) => {setFile(e.target.files[0])}} />
 
                   <button className='bg-bg-white w-full h-[40px]' type='submit'>create post</button>

@@ -52,7 +52,7 @@
 }
 
 .appContainer {
-	@apply max-w-[1568px] mx-auto px-5 xl:px-3 2xl:px-0
+	@apply max-w-[1220px] mx-auto px-5 xl:px-3 2xl:px-0
 }
 
 @layer utilities {
@@ -139,4 +139,43 @@
 }
 ::-webkit-scrollbar-thumb {
 	background-color: #FF5050;
+}
+
+.everyDayFirst-bg {
+	background-image: url('../public/assets/images/EveryDayFirst/EveryDayFirst-bg.svg');
+	background-position: center center;
+	background-size: cover;
+}
+.everyDayFirst-bg-lg {
+	background-image: url('../public/assets/images/EveryDayFirst/EveryDayFirst-bg-lg.svg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.everyDayFirst-listItem {
+	@apply w-full flex flex-col items-start gap-[12px] lg:w-[250px] mx-[30px];
+}
+
+.everyDayFirst-listItem-p {
+	@apply text-[14px] opacity-60 text-main-black font-graphik-regular xl:text-[15px];
+}
+
+.images {
+	@apply object-cover object-center;
+}
+
+.chooseColor-el {
+	@apply w-[16px] h-[16px] cursor-pointer transition-all duration-300 hover:w-[18px] hover:h-[18px] hover:border-2 rounded-full;
+}
+
+.tshirtContainer-hover:hover {
+	button {
+		bottom: 10px;
+	}
+}
+
+::selection {
+	background: #FF5050;
+	color: #FFFFFF;
 }

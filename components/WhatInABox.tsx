@@ -1,10 +1,9 @@
-import React from 'react';
 import { boxList, boxGalleryCols } from '@/constants';
 import Image from 'next/image';
 
 const WhatInABox:React.FC = ():JSX.Element => {
   return (
-    <div className='mt-[100px] h-[796px] w-full px-[20px] flex items-center justify-center lg:h-[476px] xl:h-[573px]'>
+    <div className='mt-[100px] h-[796px] w-full px-[20px] flex items-center justify-center lg:h-[476px] xl:h-[573px] xl:px-0'>
         <div className="max-w-[1220px] w-full h-full flex items-center justify-center whatInABox-image sm:w-[600px] lg:w-full">
             <div className="h-full flex flex-col justify-between items-center py-[60px] lg:flex-row lg:py-[70px] lg:px-[50px] lg:justify-between lg:w-full xl:py-[100px] xl:px-[74px]">
                 <div className="h-[375px] w-[275px] flex flex-col items-center justify-between sm:w-[500px] sm:justify-start sm:gap-[20px] lg:w-[451px] lg:items-start lg:justify-center xl:w-[481px]">
