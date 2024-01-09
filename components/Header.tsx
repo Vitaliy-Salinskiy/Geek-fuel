@@ -109,12 +109,14 @@ const Header = () => {
 							))}
 						</ul>
 
-						<button
-							disabled={activatedLink ? true : false}
-							className={`py-[30px] w-full items-center justify-center border-t border-t-border-gray cursor-pointer font-bold ${activatedLink ? "hidden" : "flex"}`}
-						>
-							LOGIN
-						</button>
+						<Link href="/auth">
+							<button
+								disabled={activatedLink ? true : false}
+								className={`py-[30px] w-full items-center justify-center border-t border-t-border-gray cursor-pointer font-bold ${activatedLink ? "hidden" : "flex"}`}
+							>
+								LOGIN
+							</button>
+						</Link>
 					</nav>
 
 					{/* desktop nav */}
@@ -173,7 +175,9 @@ const Header = () => {
 					{/* desktop tools */}
 
 					<div className="hidden gap-[50px] xl:flex">
-						<button className="uppercase text-[14px] text-main-black font-semibold">LOGIN</button>
+						<Link href="/auth">
+							<button className="uppercase text-[14px] text-main-black font-semibold">LOGIN</button>
+						</Link>
 						<Image src="/assets/images/header/search.svg" width={22} height={22} alt="search" className="cursor-pointer" />
 						<Image src="/assets/images/header/heart.svg" width={22} height={22} alt="heart" className="cursor-pointer" />
 						<Image src="/assets/images/header/shopping-bag.svg" width={22} height={22} alt="cart" className="cursor-pointer" />

@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 
-import TanstackProvider from '@/providers/TanstackProvider'
-import { Header } from '@/components'
 import './globals.scss'
 
 
@@ -18,10 +16,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className='overflow-x-hidden'>
-				<TanstackProvider>
-					{/* <Header /> */}
-					{children}
-				</TanstackProvider>
+				{children}
 			</body>
 		</html>
 	)

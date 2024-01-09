@@ -9,7 +9,7 @@ const CreatePostForm: React.FC = (): JSX.Element => {
 	const [content, setContent] = useState("");
 	const [file, setFile] = useState("");
 	const [posts, setPosts] = useState([]);
-	const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZXJ0eSIsInN1YiI6IjY1N2YzMmZmYmU0Nzc2ODMyMGMyN2EzNSIsInJvbGVzIjpbeyJfaWQiOiI2NTdmMzI1Y2JlNDc3NjgzMjBjMjdhMjUiLCJ2YWx1ZSI6IlVTRVIiLCJkZXNjcmlwdGlvbiI6IlVzZXIiLCJfX3YiOjB9LHsiX2lkIjoiNjU3ZjMyNjRiZTQ3NzY4MzIwYzI3YTI3IiwidmFsdWUiOiJBRE1JTiIsImRlc2NyaXB0aW9uIjoiQWRtaW4iLCJfX3YiOjB9XSwiaWF0IjoxNzA0MjI3OTEwLCJleHAiOjE3MDQ4MzI3MTB9.g4gJ81KadeX9shkEDg7YvdVH-aBAHVZaMuy7bX5NPw4"
+	const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZXJ0eSIsInN1YiI6IjY1N2YzMmZmYmU0Nzc2ODMyMGMyN2EzNSIsInJvbGVzIjpbeyJfaWQiOiI2NTdmMzI1Y2JlNDc3NjgzMjBjMjdhMjUiLCJ2YWx1ZSI6IlVTRVIiLCJkZXNjcmlwdGlvbiI6IlVzZXIiLCJfX3YiOjB9LHsiX2lkIjoiNjU3ZjMyNjRiZTQ3NzY4MzIwYzI3YTI3IiwidmFsdWUiOiJBRE1JTiIsImRlc2NyaXB0aW9uIjoiQWRtaW4iLCJfX3YiOjB9XSwiaWF0IjoxNzA0ODI1OTMzLCJleHAiOjE3MDU0MzA3MzN9.uZnLXKZO8kgmh-pZmJekhfaw0O3WMOLql0hB2JTtLms"
 
 	const fetchData = (): void => {
 		axios.get('http://localhost:5000/posts')
@@ -29,11 +29,10 @@ const CreatePostForm: React.FC = (): JSX.Element => {
 		formData.append('image', file);
 		formData.append('userId', '657f32ffbe47768320c27a35');
 
-		axios.post('http://localhost:5000/posts', formData, {
-			headers: {
-				'Content-Type': 'multipart/form-data',
-				'Authorization': `Bearer ${token}`
-			}
+		fetch('http://localhost:5000/posts', {
+			method: 'POST',
+			credentials: 'include',
+			body: formData,
 		})
 			.then((response) => {
 				console.log(response);
@@ -48,10 +47,9 @@ const CreatePostForm: React.FC = (): JSX.Element => {
 	};
 
 	const removePost = (id: string): void => {
-		axios.delete(`http://localhost:5000/posts/${id}`, {
-			headers: {
-				'Authorization': `Bearer ${token}`
-			}
+		fetch(`http://localhost:5000/posts/${id}`, {
+			method: 'DELETE',
+			credentials: 'include',
 		})
 			.then(() => {
 				fetchData();

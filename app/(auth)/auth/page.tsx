@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { ZodType, z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface IAuth {
 	username: string;
@@ -13,6 +13,18 @@ interface IAuth {
 
 const page = () => {
 	const [isLogging, setIsLogging] = useState(true)
+
+	useEffect(() => {
+		fetch('http://localhost:5000/auth/profile', {
+			method: 'GET',
+			credentials: 'include',
+		})
+			.then(response => response.json())
+			.then(data => console.log(data))
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+	}, [])
 
 	const loginSchema = z.object({
 		username: z.string().min(4).max(24),
