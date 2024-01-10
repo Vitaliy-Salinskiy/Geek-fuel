@@ -75,11 +75,11 @@ const page = () => {
 				</h1>
 				<div className="flex flex-col gap-2">
 					<input className="bg-bg-white px-2 py-1 border-none outline-none" {...register("username")} placeholder="username" type="text" />
-					{errors.username && <p>{errors.username.message}</p>}
+					{errors.username && <p className="text-sm font-medium">{errors.username.message}</p>}
 					<input className="bg-bg-white px-2 py-1 border-none outline-none" {...register("password")} placeholder="password" type="text" />
-					{errors.password && <p>{errors.password.message}</p>}
+					{errors.password && <p className="text-sm font-medium">{errors.password.message}</p>}
 					{!isLogging && <input className="bg-bg-white px-2 py-1 border-none outline-none" {...register("confirmPassword")} placeholder="confirm password" type="text" />}
-					{!isLogging && errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
+					{!isLogging && errors.confirmPassword && <p className="text-sm font-medium">{errors.confirmPassword.message}</p>}
 				</div>
 				<button type="submit" className="w-full bg-main-red py-1 text-white">
 					{isLogging? 'Sign in' : 'Sign up' }
