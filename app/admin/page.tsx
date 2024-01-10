@@ -5,8 +5,15 @@ import CreatePostForm from '@/components/CreatePostForm';
 import CreateProductForm from '@/components/CreateProductForm';
 import Comments from '@/components/Comments';
 
+interface IRole {
+	_id: string;
+	value: string;
+	description: string;
+	__v?: number;
+}
+
 const adminPage: React.FC = (): JSX.Element => {
-	const [formType, setFormType] = useState('products');
+	const [formType, setFormType] = useState('products');	
 
 	useEffect(() => {
 		fetch('http://localhost:5000/auth/profile', {
@@ -14,11 +21,16 @@ const adminPage: React.FC = (): JSX.Element => {
 			credentials: 'include',
 		})
 			.then(response => response.json())
-			.then(data => console.log(data))
+			.then(data => {
+				const isAdminUser = data.roles.some((role: IRole) => role.value === 'ADMIN');
+				if(!isAdminUser) window.location.href = '/';
+				else {}
+			})
 			.catch((error) => {
+				window.location.href = '/';
 				console.error('Error:', error);
 			});
-	}, [])
+	}, []);
 
 	return (
 		<div className='h-screen w-full flex items-center justify-center min-h-[762px] md:min-h-[632px]'>
