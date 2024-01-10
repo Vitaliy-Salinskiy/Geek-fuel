@@ -70,3 +70,14 @@ export interface IPost {
 	comments: Array<any>;
 	__v: number;
 }
+
+export type ColorName = 'red' | 'yellow' | 'black' | 'white' | 'gray';
+
+export interface IProduct {
+	colors: ColorName[];
+	image: string;
+	price: number;
+	title: string;
+	__v: number;
+	_id: string;
+}

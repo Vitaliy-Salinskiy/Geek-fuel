@@ -13,7 +13,7 @@ interface IRole {
 }
 
 const adminPage: React.FC = (): JSX.Element => {
-	const [formType, setFormType] = useState('products');	
+	const [formType, setFormType] = useState('products');
 
 	useEffect(() => {
 		fetch('http://localhost:5000/auth/profile', {
@@ -23,8 +23,8 @@ const adminPage: React.FC = (): JSX.Element => {
 			.then(response => response.json())
 			.then(data => {
 				const isAdminUser = data.roles.some((role: IRole) => role.value === 'ADMIN');
-				if(!isAdminUser) window.location.href = '/';
-				else {}
+				if (!isAdminUser) window.location.href = '/';
+				else { }
 			})
 			.catch((error) => {
 				window.location.href = '/';

@@ -53,9 +53,7 @@ export const PostPopup = ({ post, showPost, setShowPost, user, setIsLoading, loa
 			body: JSON.stringify(commentBody)
 		})
 			.then(res => res.json())
-			.then(data => {
-				console.log("Post data:", data)
-			}).finally(() => {
+			.finally(() => {
 				setIsLoading(false)
 			})
 	}
