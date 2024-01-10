@@ -37,3 +37,36 @@ export interface IPlanItem {
 	description: string;
 	includedIn: IncludedInPlan[];
 }
+
+export interface IAuthor {
+	_id: string;
+	username: string;
+	password: string;
+	roles: Array<any>;
+	posts: Array<any>;
+	likedPosts: Array<any>;
+	comments: Array<IComment>;
+	messages: Array<any>;
+	__v: number;
+}
+
+export interface IComment {
+	approved: boolean;
+	author: IAuthor;
+	content: string;
+	date: string;
+	post: string;
+	__v: number;
+	_id: string;
+}
+
+export interface IPost {
+	_id: string;
+	image: string;
+	title: string;
+	content: string;
+	author: IAuthor;
+	likedBy: Array<any>;
+	comments: Array<any>;
+	__v: number;
+}

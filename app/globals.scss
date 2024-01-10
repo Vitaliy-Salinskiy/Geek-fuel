@@ -59,12 +59,13 @@
 	.two {
 		width: calc(100% / 2 - 30px);
 	}
+
 	.three {
 		width: calc(100% / 3 - 30px);
 	}
 }
 
-.plan-item{
+.plan-item {
 	@apply bg-white w-full md:two xl:three px-5 pt-5 xl:px-10 pb-11 xl:pb-[70px] flex flex-col relative
 }
 
@@ -115,6 +116,7 @@
 .HereIsWhat__list-item {
 	@apply flex gap-[16px];
 }
+
 .HereIsWhat__list-item__text {
 	@apply text-main-black text-[14px] font-graphik-medium lg:text-[18px];
 }
@@ -134,9 +136,11 @@
 ::-webkit-scrollbar {
 	width: 10px;
 }
+
 ::-webkit-scrollbar-track {
 	background-color: #dedede;
 }
+
 ::-webkit-scrollbar-thumb {
 	background-color: #FF5050;
 }
@@ -146,6 +150,7 @@
 	background-position: center center;
 	background-size: cover;
 }
+
 .everyDayFirst-bg-lg {
 	background-image: url('../public/assets/images/EveryDayFirst/EveryDayFirst-bg-lg.svg');
 	background-size: cover;
@@ -178,4 +183,8 @@
 ::selection {
 	background: #FF5050;
 	color: #FFFFFF;
+}
+
+.overflow-hidden {
+	overflow: hidden;
 }

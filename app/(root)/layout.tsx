@@ -1,3 +1,4 @@
+import { Inbox } from '@/components/Inbox'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

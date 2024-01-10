@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link';
+import { Inbox } from './Inbox';
 
 import { IHeaderLinks } from '@/interfaces';
 import { headerLinks } from '@/constants';
@@ -61,6 +62,15 @@ export const HeaderItems = ({ link, setActivated, activatedLink }: HeaderItemsPr
 const Header = () => {
 	const [isBurgerActive, setIsBurgerActive] = useState<boolean>(false);
 	const [activatedLink, setActivatedLink] = useState<string>("");
+	const [isInboxActive, setIsInboxActive] = useState<boolean>(false);
+
+	useEffect(() => {
+		if (isInboxActive) {
+			document.body.classList.add('overflow-hidden')
+		} else {
+			document.body.classList.remove('overflow-hidden')
+		}
+	}, [isInboxActive])
 
 	useEffect(() => {
 		setActivatedLink("")
@@ -68,6 +78,7 @@ const Header = () => {
 
 	return (
 		<header className='font-graphik-medium border-b border-border-gray'>
+			{isInboxActive && <Inbox setIsActive={setIsInboxActive} />}
 			<div className='lg:max-w-[1568px] mx-auto px-5 md:px-4 header-2xl:px-0'>
 				<div className='h-[74px] xl:h-[99px] py-5 flexBetween'>
 
@@ -158,6 +169,10 @@ const Header = () => {
 					<div className='flex gap-5 xl:hidden'>
 						<Image
 							className="cursor-pointer"
+							onClick={() => {
+								setIsBurgerActive(false)
+								setIsInboxActive(prevState => !prevState)
+							}}
 							src="/assets/images/header/heart.svg"
 							width={17}
 							height={17}
@@ -179,7 +194,7 @@ const Header = () => {
 							<button className="uppercase text-[14px] text-main-black font-semibold">LOGIN</button>
 						</Link>
 						<Image src="/assets/images/header/search.svg" width={22} height={22} alt="search" className="cursor-pointer" />
-						<Image src="/assets/images/header/heart.svg" width={22} height={22} alt="heart" className="cursor-pointer" />
+						<Image src="/assets/images/header/heart.svg" width={22} height={22} alt="heart" className="cursor-pointer" onClick={() => { setIsInboxActive(prevState => !prevState) }} />
 						<Image src="/assets/images/header/shopping-bag.svg" width={22} height={22} alt="cart" className="cursor-pointer" />
 					</div>
 
