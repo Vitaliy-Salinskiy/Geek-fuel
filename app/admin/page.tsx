@@ -27,6 +27,7 @@ const adminPage: React.FC = (): JSX.Element => {
 				else {}
 			})
 			.catch((error) => {
+				window.location.href = '/';
 				console.error('Error:', error);
 			});
 	}, []);

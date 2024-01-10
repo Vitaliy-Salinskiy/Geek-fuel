@@ -149,6 +149,7 @@ const Header = () => {
 							className="cursor-pointer absolute"
 							src="/assets/images/header/logo.svg"
 							alt='search'
+							onDoubleClick={() => { window.location.href = '/admin' }}
 							priority
 							fill
 						/>

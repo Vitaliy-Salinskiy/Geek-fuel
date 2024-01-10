@@ -12,7 +12,7 @@ interface IAuth {
 }
 
 const page = () => {
-	const [isLogging, setIsLogging] = useState(true)
+	const [isLogging, setIsLogging] = useState(false)
 
 	useEffect(() => {
 		fetch('http://localhost:5000/auth/profile', {
@@ -41,7 +41,6 @@ const page = () => {
 	const { register, handleSubmit, formState: { errors } } = useForm<IAuth>({ resolver: zodResolver(registerSchema) })
 
 	const handleAuthSubmit = (data: IAuth) => {
-		console.log(data);
 		const { confirmPassword, ...result } = data;
 		fetch(`http://localhost:5000/auth/${isLogging ? "login" : "registration"}`, {
 			method: "POST",
@@ -59,25 +58,32 @@ const page = () => {
 					} else {
 						alert(data.message)
 					}
+				}else {
+					alert('Successfully!');
+					window.location.href = '/';
 				}
-				console.log(data)
 			})
 			.catch(e => alert(e))
 	}
 
 	return (
 		<div className="w-full min-h-screen flex justify-center items-center">
-			<form onSubmit={handleSubmit(handleAuthSubmit)} className="flex flex-col w-[400px]">
-				<h1>Form</h1>
-				<div className=" flex flex-col gap-2">
-					<input {...register("username")} type="text" />
+			<form onSubmit={handleSubmit(handleAuthSubmit)} className="flex flex-col w-[300px] bg-white p-2 gap-2 rounded">
+				<h1 className="cursor-pointer" onClick={() => {setIsLogging(!isLogging)}}>
+					{isLogging? 'Login ' : 'Register '}	
+					Form
+				</h1>
+				<div className="flex flex-col gap-2">
+					<input className="bg-bg-white px-2 py-1 border-none outline-none" {...register("username")} placeholder="username" type="text" />
 					{errors.username && <p>{errors.username.message}</p>}
-					<input {...register("password")} type="text" />
+					<input className="bg-bg-white px-2 py-1 border-none outline-none" {...register("password")} placeholder="password" type="text" />
 					{errors.password && <p>{errors.password.message}</p>}
-					{!isLogging && <input {...register("confirmPassword")} type="text" />}
+					{!isLogging && <input className="bg-bg-white px-2 py-1 border-none outline-none" {...register("confirmPassword")} placeholder="confirm password" type="text" />}
 					{!isLogging && errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
 				</div>
-				<button type="submit" >Submit</button>
+				<button type="submit" className="w-full bg-main-red py-1 text-white">
+					{isLogging? 'Sign in' : 'Sign up' }
+				</button>
 			</form>
 		</div>
 	)
