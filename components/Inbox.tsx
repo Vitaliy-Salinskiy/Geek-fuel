@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react"
 import { formatDistanceToNow } from 'date-fns';
 
-
 export const Inbox = ({ setIsActive }: { setIsActive: React.Dispatch<React.SetStateAction<boolean>> }) => {
 	const [messages, setMessages] = useState<any[]>([])
 	console.log(messages);
@@ -41,9 +40,9 @@ export const Inbox = ({ setIsActive }: { setIsActive: React.Dispatch<React.SetSt
 					<h3 className="text-[24px] font-din uppercase text-white">Messages</h3>
 					<button onClick={() => setIsActive(false)} className="text-[24px] font-din uppercase text-white">Close</button>
 				</div>
-				{messages && messages.map((message: any) => {
+				{messages && messages.map((message: any, index: number) => {
 					return (
-						<div className="bg-white box rounded-xl shadow-lg">
+						<div key={index} className="bg-white box rounded-xl shadow-lg">
 							<p>{message.title}</p>
 							<p>{formatDate(message.date)} ago</p>
 						</div>
