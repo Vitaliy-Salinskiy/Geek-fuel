@@ -19,6 +19,9 @@ const GetGeek = () => {
 		}
 	}, [isLoading])
 
+	
+
+
 	useEffect(() => {
 		if (showPopup) {
 			document.body.classList.add('overflow-hidden')
